@@ -45,4 +45,9 @@
         .onfinish=function(){ window.location.href=href; };
     });
   });
+
+  /* 戻る(bfcache復元)で、覆ったままの遷移マスクが残るのを防ぐ */
+  window.addEventListener('pageshow', function(){
+    document.querySelectorAll('.mask').forEach(function(m){ m.remove(); });
+  });
 })();
