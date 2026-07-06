@@ -1,0 +1,144 @@
+{
+  "key": "group_kml_leader",
+  "title": "リーダー情報",
+  "fields": [
+    {
+      "key": "field_kml_en",
+      "label": "英語名（ローマ字）",
+      "name": "en_name",
+      "type": "text",
+      "instructions": "例: ISAO MIYAMOTO（大文字推奨）。カードのROM表記と記事の英語名に使用。",
+      "required": 0
+    },
+    {
+      "key": "field_kml_headline",
+      "label": "インタビュータイトル",
+      "name": "headline",
+      "type": "text",
+      "instructions": "記事ヒーローの大見出し。例: 宮崎からJ1へ。地域と共に「育てる」サッカークラブの挑戦。未入力なら氏名を表示。",
+      "required": 0
+    },
+    {
+      "key": "field_kml_company",
+      "label": "会社名・団体名",
+      "name": "company",
+      "type": "text",
+      "required": 0
+    },
+    {
+      "key": "field_kml_role",
+      "label": "役職",
+      "name": "role",
+      "type": "text",
+      "required": 0
+    },
+    {
+      "key": "field_kml_lead",
+      "label": "リード文（ヒーロー説明）",
+      "name": "lead",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": "",
+      "required": 0
+    },
+    {
+      "key": "field_kml_url",
+      "label": "会社URL",
+      "name": "url",
+      "type": "url",
+      "required": 0
+    },
+    {
+      "key": "field_kml_logo",
+      "label": "会社ロゴ画像",
+      "name": "logo",
+      "type": "image",
+      "return_format": "url",
+      "preview_size": "medium",
+      "library": "all",
+      "required": 0
+    },
+    {
+      "key": "field_kml_stories",
+      "label": "MY STORY（本文セクション）",
+      "name": "story_sections",
+      "type": "repeater",
+      "instructions": "セクションを追加。1セクション＝見出し＋Q&A（＋任意の写真）。※リピーターはACF PROの機能です。ACF無料版の場合はここは表示されず、投稿本文エディタが記事本文になります。",
+      "layout": "block",
+      "button_label": "セクションを追加",
+      "sub_fields": [
+        {
+          "key": "field_kml_st_heading",
+          "label": "見出し",
+          "name": "heading",
+          "type": "text",
+          "required": 0
+        },
+        {
+          "key": "field_kml_st_qa",
+          "label": "Q&A",
+          "name": "qa",
+          "type": "repeater",
+          "layout": "block",
+          "button_label": "Q&Aを追加",
+          "sub_fields": [
+            {
+              "key": "field_kml_qa_q",
+              "label": "質問(Q)",
+              "name": "question",
+              "type": "textarea",
+              "rows": 2
+            },
+            {
+              "key": "field_kml_qa_a",
+              "label": "回答(A)",
+              "name": "answer",
+              "type": "textarea",
+              "rows": 6
+            }
+          ]
+        },
+        {
+          "key": "field_kml_st_img",
+          "label": "横に添える写真（任意）",
+          "name": "side_image",
+          "type": "image",
+          "return_format": "url",
+          "preview_size": "medium"
+        }
+      ]
+    },
+    {
+      "key": "field_kml_gallery",
+      "label": "ギャラリー（自動スクロール帯・任意）",
+      "name": "gallery",
+      "type": "gallery",
+      "instructions": "複数画像を追加すると記事下部に自動スクロールの帯で表示。※ギャラリーはACF PROの機能です。",
+      "return_format": "url"
+    },
+    {
+      "key": "field_kml_closing",
+      "label": "締めのメッセージ（任意）",
+      "name": "closing",
+      "type": "textarea",
+      "rows": 5,
+      "new_lines": "wpautop"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "leader"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "active": true,
+  "description": "",
+  "modified": 1751500000
+}

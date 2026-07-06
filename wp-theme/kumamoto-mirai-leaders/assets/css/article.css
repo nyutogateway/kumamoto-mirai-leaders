@@ -1,0 +1,105 @@
+/* article.css — 記事ページ固有スタイル（共通部分は main.css） */
+:root{--c:var(--c-blue)}
+body{line-height:1.9}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+
+/* Hero (構成のみ参考: 左に傾けた写真カード／右にタイトル・英語名・日本語名・所属・経歴・URL。配色は既存ライト基調) */
+.ahero{position:relative;overflow:hidden;background:var(--white);padding:clamp(48px,7vw,96px) 0}
+.ahero-right{position:relative}
+.co-logo-pc{position:absolute;top:clamp(12px,2vw,22px);right:clamp(12px,2vw,26px);z-index:5;width:clamp(120px,15vw,168px);height:auto;max-height:118px;object-fit:contain}
+.namebox .co-logo{flex:0 0 auto;width:clamp(92px,24vw,116px);height:auto;object-fit:contain}
+.ahero-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:flex;align-items:center;gap:clamp(28px,5vw,72px);flex-wrap:wrap}
+.ahero-left{flex:0 0 clamp(280px,38%,420px);display:flex;justify-content:center;align-items:center}
+.ahero-photo{position:relative;width:100%;max-width:400px;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--white);border:1px solid var(--line);box-shadow:0 26px 54px rgba(23,55,100,.20);transform:rotate(-3deg)}
+.ahero-photo .person{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.ahero-right{flex:1 1 360px;min-width:280px;padding:8px 0}
+.ahero-right .title{font-family:var(--disp);font-weight:400;font-size:clamp(24px,3.8vw,40px);color:var(--navy);line-height:1.34;letter-spacing:.3px;margin-bottom:14px}
+.ahero-right .title .hl{position:relative;display:inline-block}
+.ahero-right .title .hl::before{content:'';position:absolute;left:-3px;right:-3px;bottom:5px;height:36%;background:var(--c-yellow);opacity:.9;z-index:-1;border-radius:4px;transform:rotate(-1.4deg)}
+.ahero-right .en{font-family:var(--disp);font-weight:400;font-size:clamp(30px,5vw,52px);color:var(--c);line-height:1.06;letter-spacing:.5px;margin-bottom:10px}
+.ahero-right .jp{font-family:var(--body);font-weight:700;font-size:clamp(19px,2.6vw,24px);color:var(--navy);margin-bottom:6px}
+.ahero-right .aff{font-size:clamp(12px,1.6vw,14px);color:var(--gray);margin-bottom:20px}
+.ahero-right .lead{font-size:clamp(14px,2.4vw,15px);color:var(--ink);line-height:2.0;max-width:520px}
+.ahero-right .co-url{display:inline-block;margin-top:18px;font-family:var(--util);font-size:13px;color:var(--c);text-decoration:none;letter-spacing:.3px;border-bottom:1px solid var(--c);padding-bottom:1px;transition:color .2s,border-color .2s}
+.ahero-right .co-url:hover{color:var(--navy);border-color:var(--navy)}
+@media(max-width:720px){.ahero{padding:24px 0 32px}.ahero-inner{flex-direction:column;align-items:stretch;gap:22px}.ahero-left{flex:none;display:block}.ahero-photo{width:260px;max-width:100%;margin:0 auto}.ahero-right{padding:0;min-width:0}.ahero-right .lead{max-width:none}}
+
+/* Story sections */
+.article{max-width:1280px;margin:0 auto;padding:clamp(10px,2vw,20px) clamp(20px,5vw,40px) 0}
+.mystory{text-align:center;margin:clamp(56px,9vw,104px) 0 clamp(22px,3vw,30px)}
+.mystory b{display:inline-block;font-family:var(--util);font-size:clamp(13px,2vw,16px);letter-spacing:3px;color:#fff;background:var(--c);padding:9px 30px;transform:skewX(-12deg);box-shadow:0 6px 16px rgba(23,55,100,.12)}
+.mystory b i{display:inline-block;transform:skewX(12deg);font-style:normal}
+.story-h{text-align:center;font-family:var(--disp);font-weight:400;font-size:clamp(20px,4vw,32px);color:var(--navy);line-height:1.5;margin-bottom:clamp(26px,4vw,44px);letter-spacing:.5px}
+
+.qa{padding:6px 0 22px}
+.qa .q{display:flex;gap:13px;align-items:flex-start;margin-bottom:14px}
+.qa .a + .q{margin-top:clamp(14px,2.4vw,26px)}
+.qa .q .mk{flex:0 0 auto;font-family:var(--util);font-size:14px;color:#fff;background:var(--c);width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.qa .q .qt{font-weight:700;font-size:clamp(16px,2.5vw,19px);color:var(--navy);line-height:1.5;padding-top:2px}
+.qa .a{display:flex;gap:13px;align-items:flex-start;margin-bottom:28px}
+.qa .a .mk{flex:0 0 auto;font-family:var(--util);font-size:13px;color:var(--c);border:2px solid var(--c);width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.qa .a p{margin:0;padding-top:2px;font-size:15px;line-height:2.05}
+
+/* text + photo two-column inside a story */
+.cols{display:flex;gap:clamp(20px,3vw,34px);align-items:flex-start;flex-wrap:wrap}
+.cols .txt{flex:1 1 320px;min-width:260px}
+.cols .pic{flex:1 1 240px;min-width:220px}
+.cols.rev .pic{order:-1}
+/* テキストが長い時、画像をスクロール追従（sticky）させて余白をスクロール領域として活用（PCのみ）。
+   画像は比率維持・トリミングなし。.pic は本文高さまで伸び、その中で .spic が追従する */
+@media(min-width:721px){
+  .cols{align-items:stretch}
+  .cols .pic .spic{position:-webkit-sticky;position:sticky;top:120px}
+}
+/* ロゴ切替: 1280超はヒーロー右上のはじ／1280以下は名前の横（横並び） */
+@media(min-width:1281px){.namebox .co-logo{display:none}}
+@media(max-width:1280px){.co-logo-pc{display:none}.namebox{display:flex;align-items:center;gap:14px;margin:12px 0 6px}.namebox .jp{margin-bottom:2px}.namebox .aff{margin-bottom:0}}
+/* SP: 縦積みにして画像を本文の上に（本文下に埋もれないように）。画像は比率維持・トリミングなし */
+@media(max-width:720px){
+  .cols{flex-direction:column;gap:20px}
+  .cols .pic,.cols.rev .pic{order:-1}
+  .cols .txt,.cols .pic{width:100%;min-width:0}
+}
+.spic{position:relative;border-radius:14px;overflow:hidden;line-height:0}
+.spic::after{content:none}
+.spic .tag{position:absolute;top:12px;left:12px;z-index:1;font-family:var(--util);font-size:9px;letter-spacing:1px;color:#fff;background:rgba(255,255,255,.22);padding:4px 9px;border-radius:20px}
+.spic .cap{position:relative;z-index:1;font-size:11px;color:#fff;opacity:.92}.phf{display:block;width:100%;height:auto}.gph .phf{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* 画像ホバーズーム */
+.spic .phf,.gph .phf{transition:transform .5s ease}
+.spic:hover .phf,.gph:hover .phf{transform:scale(1.05)}
+
+/* full-bleed gallery — トップのスライダーと同じ自動スクロール（CSSマーキー） */
+.gallery{margin:clamp(40px,6vw,72px) 0;width:100%;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.gallery .gtrack{display:flex;gap:0;width:max-content;will-change:transform;transform:translateZ(0);backface-visibility:hidden;animation:gslide 36s linear infinite}
+@keyframes gslide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.gph{position:relative;flex:0 0 auto;width:clamp(220px,30vw,300px);height:clamp(150px,18vw,200px);overflow:hidden;line-height:0}
+.gph .tag{position:absolute;bottom:10px;left:10px;font-family:var(--util);font-size:9px;letter-spacing:1px;color:#fff;background:rgba(0,0,0,.3);padding:3px 8px;border-radius:14px}
+
+/* closing statement */
+.closing{text-align:center;max-width:900px;margin:0 auto;padding:6px 0 0}
+.closing p{font-size:clamp(15px,2.6vw,17px);color:var(--ink);line-height:2.1}
+
+.backwrap{text-align:center;padding:clamp(48px,7vw,90px) 0 clamp(40px,6vw,70px)}
+.backbtn{display:inline-block;font-family:var(--util);font-size:12px;letter-spacing:1px;color:var(--navy);border:2px solid var(--navy);border-radius:30px;padding:13px 30px;transition:.2s}
+.backbtn:hover{background:var(--navy);color:#fff}
+
+/* ---- スクロール表示 ---- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---- ヒーロー登場アニメ ---- */
+@media(prefers-reduced-motion:no-preference){
+  .ahero-photo{animation:aPhoto 1.1s cubic-bezier(.34,1.1,.6,1) both}
+  .ahero-right .title{animation:aRise .8s ease both .25s}
+  .ahero-right .en{animation:aRise .7s ease both .38s}
+  .ahero-right .jp{animation:aRise .7s ease both .5s}
+  .ahero-right .aff{animation:aRise .7s ease both .58s}
+  .ahero-right .lead{animation:aRise .7s ease both .68s}
+  .ahero-right .co-url{animation:aRise .7s ease both .82s}
+}
+@keyframes aRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes aPhoto{from{opacity:0;transform:rotate(-3deg) scale(.94)}to{opacity:1;transform:rotate(-3deg) scale(1)}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* Footer は main.css に集約 */

@@ -1,0 +1,13 @@
+/*
+Theme Name: 熊本未来リーダーズ
+Theme URI: https://kawaidablue.github.io/kumamoto-mirai-leaders/
+Description: 熊本未来リーダーズ 公式テーマ。リーダー（インタビュー）はカスタム投稿タイプ「leader」＋ACFで管理します。実CSSは assets/css/ を functions.php から読み込みます。
+Author: N-BRIDGE
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+Text Domain: kml
+*/
+
+/* 実際のスタイルは assets/css/main.css / index.css / article.css を functions.php で読み込みます。 */
